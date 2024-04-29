@@ -4,25 +4,26 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Seller implements Serializable {
-	
+
 	private static final long serialVersionUID = 1L;
+
 	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
-	private Double BaseSalary;
+	private Double baseSalary;
 	
 	private Department department;
 	
 	public Seller() {
 	}
 
-	public Seller(Integer id, String name, String email, Date birthDate, Double BaseSalary, Department department) {
+	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
-		this.BaseSalary = BaseSalary;
+		this.baseSalary = baseSalary;
 		this.department = department;
 	}
 
@@ -59,11 +60,11 @@ public class Seller implements Serializable {
 	}
 
 	public Double getBaseSalary() {
-		return BaseSalary;
+		return baseSalary;
 	}
 
-	public void setBaseSalary(Double BaseSalary) {
-		this.BaseSalary = BaseSalary;
+	public void setBaseSalary(Double baseSalary) {
+		this.baseSalary = baseSalary;
 	}
 
 	public Department getDepartment() {
@@ -84,12 +85,15 @@ public class Seller implements Serializable {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
+		if (this == obj) {
 			return true;
-		if (obj == null)
+		}
+		if (obj == null) {
 			return false;
-		if (getClass() != obj.getClass())
+		}
+		if (getClass() != obj.getClass()) {
 			return false;
+		}
 		Seller other = (Seller) obj;
 		if (id == null) {
 			if (other.id != null)
@@ -101,8 +105,7 @@ public class Seller implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", salary=" + BaseSalary + ", department=" + department + "]";
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+				+ baseSalary + ", department=" + department + "]";
 	}
-	
-
 }
